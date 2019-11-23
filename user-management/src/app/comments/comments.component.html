@@ -1,0 +1,24 @@
+<ng-select class="custom card1 mb-3 card1" [items]="comments" bindLabel="name"></ng-select>
+<table class="table table-striped"> 
+               
+    <thead>
+        <tr>
+            
+            <th>id</th>
+            <th>name</th>
+            <th>email</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of comments" id="{{data.id}}">
+            <td><a href="#/userEdit/{{data.id}}">{{data.id}}</a></td>
+            <td>{{data.name}}</td>
+             <td>{{data.email}}</td>
+            <td><a class="btn btn-success" >Edit</a>
+                <button class="btn btn-success ml-2"  >View</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
