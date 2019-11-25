@@ -1,0 +1,24 @@
+
+<div class="card1 d-flex justify-content-center align-items-center">
+    
+    <form>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Username</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name" name="name" [(ngModel)]="username" autocomplete="off">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password"  [(ngModel)]="password"   required/>
+            </div>
+           
+           <button type="submit" class="btn btn-primary" (click)="signin()">signin</button>
+            <button type="submit" class="btn btn-primary ml-3">signup</button>
+          </form> 
+
+
+</div>
+
+
+
+

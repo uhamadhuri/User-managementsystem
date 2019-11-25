@@ -1,4 +1,6 @@
-import { UsersModule } from './users/users.module';
+import { UserService } from './../services/user.service';
+import { LoginComponent } from './../login/login.component';
+//import { UsersModule } from './users/users.module';
 import { HeaderComponent } from './../header/header.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -8,33 +10,51 @@ import { NavbarComponent } from 'src/navbar/navbar.component';
 import { RouterModule,Router } from "@angular/router";
 import { FormsModule } from '@angular/forms';
 //import { PostComponent } from './post/post.component';
-import { PostModule} from "./post/post.module";
-import { CommentsModule} from "./comments/comments.module"
-
+//import { PostModule} from "./post/post.module";
+//import { CommentsModule} from "./comments/comments.module";
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { LoginGuard } from './../login/login.guard';
+import { PopoverModule } from 'ngx-bootstrap/popover';
+import { ViewComponent } from './view/view.component';
 
 const App:any=[
   {path:'',
   pathMatch:"full",
-  redirectTo:"users"},
+
+  redirectTo:"login"},
+  {
+    path:"login",
+    component:LoginComponent
+  },
+  
   {
     path:"users",
     loadChildren:"./users/users.module#UsersModule"
+    
+  
   },
   {
     path:"post",
-  loadChildren:"./post/post.module#PostModule"
+  loadChildren:"./post/post.module#PostModule",
+  CanActivate:[LoginGuard]
 
   },
   {
     path:"comments",
-    loadChildren:"./comments/comments.module#CommentsModule"
-  }
+    loadChildren:"./comments/comments.module#CommentsModule",
+    CanActivate:[LoginGuard]
+  },
+  
 ]
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    NavbarComponent
+   NavbarComponent,
+   LoginComponent,
+   ViewComponent
    
     
   
@@ -47,9 +67,29 @@ const App:any=[
 
     
    
-    RouterModule.forRoot(App)
+    RouterModule.forRoot(App),
+    
+
+    
+   
+    ModalModule.forRoot(),
+    
+
+    
+   
+    PaginationModule.forRoot(),
+    
+
+    
+   
+    TooltipModule.forRoot(),
+    
+
+    
+   
+    PopoverModule.forRoot()
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

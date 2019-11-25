@@ -1,3 +1,4 @@
+//import { LoginGuard } from './../../login/login.guard';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UserService } from './../../services/user.service';
@@ -5,6 +6,13 @@ import { UserService } from './../../services/user.service';
 import { Router,RouterModule } from "@angular/router";
 import { UsersComponent } from './users.component';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { LoginGuard } from "src/login/login.guard";
+import { PopoverModule } from 'ngx-bootstrap/popover';
+
+
+
 
 const Route:any=[
   {
@@ -12,9 +20,11 @@ const Route:any=[
     pathMatch:"full",
     redirectTo:"users"
   },
+ 
   {
     path:"users",
-    component: UsersComponent
+    component: UsersComponent,
+    CanActivate:[LoginGuard]
   }
   
 ]
@@ -24,6 +34,9 @@ const Route:any=[
   imports: [
     CommonModule,
     NgSelectModule,
+    ModalModule ,
+    TooltipModule ,
+    PopoverModule,
     
     RouterModule.forChild(Route)
   ],

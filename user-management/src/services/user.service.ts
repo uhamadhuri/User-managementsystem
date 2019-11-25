@@ -8,6 +8,7 @@ import { HttpClient } from "@angular/common/http";
 export class UserService{
     public userdata:any;
     users:any;
+    data;
     constructor(private http:HttpClient){}
     fetchUsers(){
         
