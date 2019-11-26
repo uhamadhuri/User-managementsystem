@@ -3,6 +3,7 @@ import { PostComponent } from './post.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
 
 
 const rout:any=[
@@ -22,6 +23,7 @@ const rout:any=[
   imports: [
     CommonModule,
     NgSelectModule,
+    AccordionModule,
     RouterModule.forChild(rout)
   ]
 })

@@ -17,7 +17,7 @@
                         <td   tooltip="{{data.name}}">{{data.name}}</td>
                         <td  popover="{{data.email}}">{{data.email}}</td>
                         <td><a class="btn btn-success" (click)="Modal(template1)" >Edit</a>
-                            <button class="btn btn-success ml-2" (click)="openModal(template)"  >View</button>
+                            <button class="btn btn-success ml-2" routerLink="/view" >View</button>
                            
                               <ng-template #template1>
                                 <div class="modal-header">

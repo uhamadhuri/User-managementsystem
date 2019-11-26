@@ -18,6 +18,8 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { LoginGuard } from './../login/login.guard';
 import { PopoverModule } from 'ngx-bootstrap/popover';
 import { ViewComponent } from './view/view.component';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const App:any=[
   {path:'',
@@ -46,6 +48,10 @@ const App:any=[
     loadChildren:"./comments/comments.module#CommentsModule",
     CanActivate:[LoginGuard]
   },
+  {
+    path:"view",
+    component:ViewComponent 
+  }
   
 ]
 @NgModule({
@@ -87,7 +93,17 @@ const App:any=[
 
     
    
-    PopoverModule.forRoot()
+    PopoverModule.forRoot(),
+    
+
+    
+   
+    AccordionModule.forRoot(),
+    
+
+    
+   
+    BrowserAnimationsModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

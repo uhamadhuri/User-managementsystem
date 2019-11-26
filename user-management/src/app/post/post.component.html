@@ -1,4 +1,4 @@
-<ng-select class="custom card1 mb-3 card1" [items]="posts" bindLabel="title"></ng-select>
+<!----<ng-select class="custom card1 mb-3 card1" [items]="posts" bindLabel="title"></ng-select>
 <table class="table table-striped"> 
                
     <thead>
@@ -19,6 +19,14 @@
             </td>
         </tr>
     </tbody>
-</table>
+</table> -->
+<accordion class="text-center" *ngFor="let data of posts" >
+    <accordion-group heading='UserId:{{data.id}}'>
+   <p> <span style="color:red">Id:</span><span>{{data.id}}</span>  </p>
+   <p> <span style="color:red">UserId:</span><span>{{data.userId}}</span></p>
+   <p>   <span style="color:red">Title:</span><span>{{data.title}}</span></p>
+    </accordion-group>
+  </accordion>
+
 
 

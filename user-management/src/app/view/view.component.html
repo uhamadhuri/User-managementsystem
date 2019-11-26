@@ -1,0 +1,11 @@
+<div class="card text-center" *ngFor="let data of users">
+    <div class="card-header" >
+  <p> <span style="color:blueviolet"> UserId:</span> <span>{{data.id}}</span> </p>
+    </div>
+    <div class="card-body">
+   <p> <span style="color:green">Name:</span> <span>{{data.name}}</span></p>
+    </div>
+    <div class="card-footer">
+    <p><span style="color:hotpink">Email:</span> <span> {{data.email}}</span></p>
+    </div>
+  </div>
