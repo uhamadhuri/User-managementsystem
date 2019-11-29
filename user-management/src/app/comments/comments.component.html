@@ -1,3 +1,11 @@
+
+<div class="col-xs-12 col-12 ml-2">
+  <pagination   [boundaryLinks]="true" previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;"
+        [totalItems]="100" [(ngModel)]="currentPage" (pageChanged)="pageChanged($event)"></pagination>
+</div>
+
+  
+
 <ng-select class="custom card1 mb-3 card1" [items]="comments" bindLabel="name"></ng-select>
 <table class="table table-striped"> 
                
@@ -18,7 +26,20 @@
             <td><a class="btn btn-success" >Edit</a>
                 <button class="btn btn-success ml-2"  >View</button>
             </td>
+           
+                  
         </tr>
     </tbody>
 </table>
+
+<!--<div class="row">
+        <div class="col-xs-12 col-12">
+          <div class="content-wrapper">
+            <p class="content-item" *ngFor="let content of comments">{{content.name}}</p>
+          </div>
+          <pagination [totalItems]="contentArray.length" (pageChanged)="pageChanged($event)"></pagination>
+  </div>
+</div>-->
+
+
 

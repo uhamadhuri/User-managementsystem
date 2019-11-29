@@ -10,13 +10,9 @@ const rout:any=[
   {
     path:'',
     pathMatch:"full",
-    redirectTo:"post"
-  },
-  {
-    path:"post",
     component:PostComponent
-
   }
+  
 ]
 @NgModule({
   declarations: [PostComponent],

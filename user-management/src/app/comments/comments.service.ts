@@ -12,10 +12,12 @@ export class CommentsService{
     fetchUsers(){
         
 
-        return this.http.get("https://jsonplaceholder.typicode.com/comments")
+        return  this.http.get("https://jsonplaceholder.typicode.com/comments?_page=1&_limit=50 /")
+        
     }
-    getuserInfo(id:any){
-        return this.http.get("https://jsonplaceholder.typicode.com/comments/"+id)
+   
+    getCommentInfo(id:any){
+        return this.http.get("https://jsonplaceholder.typicode.com/comments?"+id)
     }
    
 

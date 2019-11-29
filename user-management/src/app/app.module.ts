@@ -20,6 +20,7 @@ import { PopoverModule } from 'ngx-bootstrap/popover';
 import { ViewComponent } from './view/view.component';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+//import { PaginationModule } from 'ngx-bootstrap/pagination';
 
 const App:any=[
   {path:'',
@@ -33,20 +34,20 @@ const App:any=[
   
   {
     path:"users",
-    loadChildren:"./users/users.module#UsersModule"
-    
+    loadChildren:"./users/users.module#UsersModule",
+    canActivate:[LoginGuard]
   
   },
   {
     path:"post",
   loadChildren:"./post/post.module#PostModule",
-  CanActivate:[LoginGuard]
+  canActivate:[LoginGuard]
 
   },
   {
     path:"comments",
     loadChildren:"./comments/comments.module#CommentsModule",
-    CanActivate:[LoginGuard]
+    canActivate:[LoginGuard]
   },
   {
     path:"view",

@@ -18,14 +18,10 @@ const Route:any=[
   {
     path:'',
     pathMatch:"full",
-    redirectTo:"users"
-  },
- 
-  {
-    path:"users",
-    component: UsersComponent,
-    CanActivate:[LoginGuard]
+    component: UsersComponent
+   
   }
+ 
   
 ]
 
